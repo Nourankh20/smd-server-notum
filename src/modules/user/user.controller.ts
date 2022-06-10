@@ -48,7 +48,7 @@ export class UserController {
       
   }
 
-  @Get('/login')
+  @Post('/login')
   login(@Body() user:login){
     // return  ""+ userid +","+ password ;
     console.log('user', user)
