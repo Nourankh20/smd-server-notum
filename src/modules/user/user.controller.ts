@@ -45,7 +45,8 @@ export class UserController {
 
   @Get('/login')
   login(userid:number, password:string){
-    return this.userService.login(userid,password);
+    return  ""+ userid +","+ password ;
+    // return this.userService.login(userid,password);
   }
 
   
