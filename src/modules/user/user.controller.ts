@@ -51,6 +51,7 @@ export class UserController {
   @Get('/login')
   login(@Body() user:login){
     // return  ""+ userid +","+ password ;
+    console.log('user', user)
     return this.userService.login(user);
   }
 
