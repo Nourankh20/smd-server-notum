@@ -34,14 +34,18 @@ export class UserController {
     async register(@Body() dto:UserDto):Promise<any>{
     console.log('Entered post');
       const id_exists=(await this.userService.findUserbyId(dto.userId.toString()))!=null?true:false;
-      const email_exists=(await this.userService.findUserbyEmail(dto.email))!=null?true:false;
 
-      if(id_exists||email_exists){
+      if(id_exists){
         throw 400;
       }
 
       return this.userService.createUser(dto);
       
+  }
+
+  @Get('/login')
+  login(userid:number, password:string){
+    return this.userService.login(userid,password);
   }
 
   

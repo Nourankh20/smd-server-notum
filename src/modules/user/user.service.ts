@@ -13,16 +13,14 @@ export class UserService {
   
   ) {}
 
-//   /**
-//    * Gets the user from the mongo database
-//    * @param {AuthDto} dto checks if user has entered an email and a password
-//    * @return {User} the user from the mongo database
-//    */
-//   async findOneUser(dto: AuthDto): Promise<User> {
-//     return await this.userModel
-//       .findOne({ email: dto.email, password: dto.password })
-//       .exec();
-//   }
+
+  async login(userid:number, password:string) {
+    const user = await this.userModel.findOne({ userId: userid, password: password }).exec();
+    if( user) {
+      return true;
+    }
+    return false;
+  }
 
   /**
    * Returns all users from mongo database
