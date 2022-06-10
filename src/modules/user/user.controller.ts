@@ -2,6 +2,11 @@ import { Controller, Get, Request, UseGuards,Post, Body,Param } from '@nestjs/co
 import { UserDto } from './dto/user.dto';
 import { UserService } from './user.service';
 
+type login = {
+  userid:number,
+  password:string
+}
+
 @Controller('user')
 export class UserController {
   constructor(private userService: UserService) {}
@@ -44,9 +49,9 @@ export class UserController {
   }
 
   @Get('/login')
-  login(userid:number, password:string){
-    return  ""+ userid +","+ password ;
-    // return this.userService.login(userid,password);
+  login(user:login){
+    // return  ""+ userid +","+ password ;
+    return this.userService.login(user);
   }
 
   

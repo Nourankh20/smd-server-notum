@@ -5,6 +5,10 @@ import { Model } from "mongoose";
 import { UserDto } from "./dto/user.dto";
 // import { AuthDto } from "../auth/dtos/auth.dto";
 
+type login = {
+  userid:number,
+  password:string
+} 
 
 @Injectable()
 export class UserService {
@@ -14,9 +18,9 @@ export class UserService {
   ) {}
 
 
-  async login(userid:number, password:string) {
-    const user = await this.userModel.findOne({ userId: userid, password: password }).exec();
-    if( user) {
+  async login(user:login) {
+    const user_ = await this.userModel.findOne({ userId: user.userid, password: user.password }).exec();
+    if( user_) {
       return true;
     }
     return false;
