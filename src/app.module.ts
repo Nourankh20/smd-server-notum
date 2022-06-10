@@ -7,6 +7,7 @@ import { CourseModule } from './modules/courses/course.module';
 import { UserController } from './modules/user/user.controller';
 import { PostsController } from './modules/posts/posts.controller';
 import { CourseController } from './modules/courses/course.controller';
+import { AppController } from './app.controller';
 require('dotenv').config();
 
 
@@ -16,12 +17,14 @@ require('dotenv').config();
     MongooseModule.forRoot(process.env.MONGO),
     UsersModule,
     PostsModule,
-    CourseModule
+    CourseModule,
+    
   ],
   controllers:[
     UserController,
     PostsController,
-    CourseController
+    CourseController,
+    AppController
   ]
 })
 export class AppModule {}
