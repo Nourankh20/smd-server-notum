@@ -49,7 +49,7 @@ export class UserController {
   }
 
   @Get('/login')
-  login(user:login){
+  login(@Body() user:login){
     // return  ""+ userid +","+ password ;
     return this.userService.login(user);
   }
