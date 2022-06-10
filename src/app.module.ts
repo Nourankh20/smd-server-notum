@@ -8,6 +8,7 @@ import { UserController } from './modules/user/user.controller';
 import { PostsController } from './modules/posts/posts.controller';
 import { CourseController } from './modules/courses/course.controller';
 import { AppController } from './app.controller';
+import { AppService } from './app.service';
 require('dotenv').config();
 
 
@@ -25,6 +26,9 @@ require('dotenv').config();
     PostsController,
     CourseController,
     AppController
+  ],
+  providers:[
+    AppService
   ]
 })
 export class AppModule {}
