@@ -29,7 +29,8 @@ export class PostsController {
 
 
   @Post('/post')
-  addPost(dto:PostsDto) {
+  addPost(@Body()dto:PostsDto) {
+    console.log('dto', dto)
     return this.postService.createPost(dto);
   }
 

@@ -6,9 +6,9 @@ export class PostsDto {
   _id!: number;
  
   @IsNumber()
-  userId!: number;
+  userid!: number;
 
-  @IsEmail()
+  @IsNotEmpty()
   username!: string;
 
   @IsNotEmpty()

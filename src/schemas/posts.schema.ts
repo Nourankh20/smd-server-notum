@@ -27,5 +27,8 @@ export class Post {
   @Prop({ required: true })
   courseid: string ;
 
+  @Prop({ required: true })
+  image: string ;
+
 }
 export const PostSchema = SchemaFactory.createForClass(Post);
