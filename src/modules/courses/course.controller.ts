@@ -17,7 +17,7 @@ export class CourseController {
 
 
   @Post('/create')
-  createCourse(dto:CourseDto){
+  createCourse(@Body()dto:CourseDto){
     return this.courseService.createCourse(dto);
   }
 
