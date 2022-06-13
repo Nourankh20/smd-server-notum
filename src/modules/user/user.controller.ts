@@ -40,7 +40,8 @@ export class UserController {
     // console.log('Entered post');
     const id_exists=await this.userService.findUserbyId(dto.userId.toString());
      console.log('id_exists', id_exists)
-
+      if(id_exists)
+        return false;
       return this.userService.createUser(dto);
       
   }
