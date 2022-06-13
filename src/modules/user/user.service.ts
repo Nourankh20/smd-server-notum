@@ -21,7 +21,7 @@ export class UserService {
   async login(user:login) {
     const user_ = await this.userModel.findOne({ userId: user.userid, password: user.password }).exec();
     if( user_) {
-      return true;
+      return user_;
     }
     return false;
   }
