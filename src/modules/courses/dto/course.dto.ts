@@ -8,8 +8,8 @@ export class CourseDto {
   @IsNotEmpty()
   name!: string;
  
-  @IsNumber()
-  code!: number;
+  @IsNotEmpty()
+  code!: string;
 
  
 
