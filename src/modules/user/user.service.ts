@@ -38,7 +38,7 @@ export class UserService {
    * @param {UserDto} dto checks that the user filled the register
    * @return {User} the created user object
    */
-  async createUser(dto: UserDto): Promise<User> {
+  async createUser(dto: UserDto) {
     const newUser = new this.userModel(dto);
     return newUser.save();
   }
