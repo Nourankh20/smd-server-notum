@@ -37,10 +37,10 @@ export class UserController {
   
   @Post('/register')
     async register(@Body() dto:UserDto):Promise<any>{
-    console.log('Entered post');
-      const id_exists=await this.userService.findUserbyId(dto.userId.toString());
+    // console.log('Entered post');
+    // const id_exists=await this.userService.findUserbyId(dto.userId.toString());
 
-     console.log('id_exists', id_exists)
+    //  console.log('id_exists', id_exists)
 
       return this.userService.createUser(dto);
       
