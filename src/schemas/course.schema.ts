@@ -13,7 +13,7 @@ export class Course {
   name: string 
   
   @Prop({ required: true })
-  code: number
+  code: string
 
 }
 export const CourseSchema = SchemaFactory.createForClass(Course);
