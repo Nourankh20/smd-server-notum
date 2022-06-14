@@ -9,14 +9,13 @@ import { PostsDto } from './dto/posts.dto';
 export class PostService {
   constructor(@InjectModel(Post.name) private postModel: Model<PostDocument>) {}
 
-    findAllByCourse(courseid:number) {
+    findAllByCourse(courseid:string) {
       return this.postModel.find({ courseid : courseid }).exec();
     }
 
  
   async createPost(dto: PostsDto) {
     const newPost = new this.postModel(dto);
-    
     return newPost.save();
   }
 
@@ -55,6 +54,32 @@ export class PostService {
         .exec();
     }
     return 'failed';
+  }
+
+
+
+  async rank(code:string){
+    const posts = await this.postModel.find({courseid:code}).exec();
+    console.log('posts', posts)
+    const sum = await this.postModel.aggregate( [
+      {
+        $match: {
+          'courseid':code
+        },
+      },
+      {
+      
+      "$group":
+        {
+          "_id": "$username",
+          "likes": { "$sum": "$no_likes" }
+        }
+    }
+  ])
+
+  return sum.sort()
+
+
   }
 
 }

@@ -10,6 +10,8 @@ export class CourseController {
   constructor(private courseService: CourseService) {}
 
 
+
+
   @Get('/:faculty')
   getCourse(@Param('faculty') faculty:string){
     return this.courseService.findAllByFaculty(faculty);

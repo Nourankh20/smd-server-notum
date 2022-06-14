@@ -10,8 +10,14 @@ export class PostsController {
   
 
   
+  @Get('/rank/:courseid')
+  rank(@Param('courseid') courseid:string) {
+    return this.postService.rank(courseid);
+  }
+
+  
   @Get('/:courseid')
-  posts(@Param('courseid') courseid:number) {
+  posts(@Param('courseid') courseid:string) {
     return this.postService.findAllByCourse(courseid);
   }
 
