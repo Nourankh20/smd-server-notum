@@ -25,5 +25,8 @@ export class PostsDto {
   @IsNotEmpty()
   courseid!: string;
 
+  @IsNotEmpty()
+  image!: string;
+
 
 }
