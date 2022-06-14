@@ -2,8 +2,8 @@ import { IsEmail, IsNotEmpty, IsNumber, isPhoneNumber , } from 'class-validator'
 
 export class PostsDto {
 
-  @IsNumber()
-  _id!: number;
+  // @IsNumber()
+  // _id!: number;
  
   @IsNumber()
   userid!: number;

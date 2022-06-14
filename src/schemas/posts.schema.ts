@@ -6,8 +6,8 @@ export type PostDocument = Post & Document;
 @Schema()
 export class Post {
 
-  @Prop({ required: true })
-  _id: number ;
+  // @Prop({ required: true })
+  // _id: number ;
 
   @Prop({ required: true })
   userid: number ;

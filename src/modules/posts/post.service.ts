@@ -16,6 +16,7 @@ export class PostService {
  
   async createPost(dto: PostsDto) {
     const newPost = new this.postModel(dto);
+    
     return newPost.save();
   }
 
